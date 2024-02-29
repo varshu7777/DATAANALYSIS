@@ -21,14 +21,14 @@ train_datagen=ImageDataGenerator(
           validation_split=0.2
 )
 train_generator=train_datagen.flow_from_directory(
-                    '/content/drive/MyDrive/DATASET/BridalCloths/test_cloths',
+                    '',
                       target_size=(IMG_SIZE,IMG_SIZE),
                       batch_size=BATCH_SIZE,
                       class_mode='binary',
                       subset='training'
 )
 val_generator=train_datagen.flow_from_directory(
-                    '/content/drive/MyDrive/DATASET/BridalCloths/test_cloths',
+                    '',
                       target_size=(IMG_SIZE,IMG_SIZE),
                       batch_size=BATCH_SIZE,
                       class_mode='binary',
@@ -36,7 +36,7 @@ val_generator=train_datagen.flow_from_directory(
 )
 test_datagen=ImageDataGenerator(rescale=1./255)
 test_generator=test_datagen.flow_from_directory(
-                      '/content/drive/MyDrive/DATASET/BridalCloths/cloths',
+                      '',
                       target_size=(IMG_SIZE,IMG_SIZE),
                       batch_size=BATCH_SIZE,
                       class_mode='binary'
