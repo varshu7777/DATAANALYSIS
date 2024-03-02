@@ -21,14 +21,14 @@ train_datagen=ImageDataGenerator(
           validation_split=0.2
 )
 train_generator=train_datagen.flow_from_directory(
-                    '',
+                    '/content/drive/MyDrive/DATASET/Brain_Tumor_Detection/train',
                       target_size=(IMG_SIZE,IMG_SIZE),
                       batch_size=BATCH_SIZE,
                       class_mode='binary',
                       subset='training'
 )
 val_generator=train_datagen.flow_from_directory(
-                    '',
+                    '/content/drive/MyDrive/DATASET/Brain_Tumor_Detection/train',
                       target_size=(IMG_SIZE,IMG_SIZE),
                       batch_size=BATCH_SIZE,
                       class_mode='binary',
@@ -36,7 +36,7 @@ val_generator=train_datagen.flow_from_directory(
 )
 test_datagen=ImageDataGenerator(rescale=1./255)
 test_generator=test_datagen.flow_from_directory(
-                      '',
+                      '/content/drive/MyDrive/DATASET/Brain_Tumor_Detection/train',
                       target_size=(IMG_SIZE,IMG_SIZE),
                       batch_size=BATCH_SIZE,
                       class_mode='binary'
@@ -68,7 +68,7 @@ import numpy as np
 #load saved model
 model=load_model('/content/model.h5')
 #load and preprocess the test image
-test_image_path='/content/drive/MyDrive/DATASET/BridalCloths/test_cloths/1/102.jpg'
+test_image_path='/content/drive/MyDrive/DATASET/Brain_Tumor_Detection/train/no/No19.jpg'
 img=image.load_img(test_image_path,target_size=(224,224))
 img_array=image.img_to_array(img)
 img_array=np.expand_dims(img_array,axis=0) #add batch dimension
